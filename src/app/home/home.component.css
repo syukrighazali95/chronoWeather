@@ -1,0 +1,16 @@
+#location {
+  text-align: center;
+}
+
+.jumbotron{
+  background-image: url("../../assets/jumbo_back.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+  background-color: black;
+}
+
+#list{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
