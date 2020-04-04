@@ -1,0 +1,15 @@
+h1{
+  color: orange;
+}
+.container{
+  padding-top: 170px;
+  padding-bottom: 320px;
+  background-image: url("../../assets/map.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+  background-color: black;
+}
+
+.jumbotron{
+  background: none;
+}

@@ -9,39 +9,42 @@ import { WeatherService } from '../weather.service';
 })
 
 export class HomeComponent implements OnInit {
+  value: string;
   weather: any;
-  location: string;
-  temperature: string;
-  humidity: string;
-  feels: string;
-  wind: string;
-  icon: any;
-  time: any;
-
-  constructor(private weatherService: WeatherService) {
-    this.location = 'Johor Bahru';
-  }
-
+  location = {
+    state:'Manchester'
+  };
+  //
+  constructor(private weatherService: WeatherService) {}
+  //
   ngOnInit(): void {
-
-    this.weatherService.getWeather(this.location)
-    .subscribe(weather => {
-      this.weather = weather.current.condition.text;
-      this.temperature = weather.current.temp_c;
-      this.humidity = weather.current.humidity;
-      this.feels = weather.current.feelslike_c;
-      this.wind = weather.current.wind_kph;
-      this.icon = "http:" +  weather.current.condition.icon;
-      this.time = weather.current.last_updated;
-      console.log(weather);
-    });
+    this.value = localStorage.getItem('location');
+    if (this.value != null){
+      this.location = JSON.parse(this.value);
+    } else {
+      this.location = {
+       state:'Manchester'
+      };
+    }
+    this.getWeatherService();
     console.log("test");
   }
+  //
+  //
+  getWeatherService(){
+    this.weatherService.getWeather(this.location.state).subscribe(
+      response => {this.weather = response;
+      console.log(response);},
+      err => {console.error(err)},
+      () => {console.log('done loading api')}
+      // this.temperature = weather.current.temp_c;
+      // this.humidity = weather.current.humidity;
+      // this.feels = weather.current.feelslike_c;
+      // this.wind = weather.current.wind_kph;
+      // this.icon = "http:" +  weather.current.condition.icon;
+      // this.time = weather.current.last_updated;
 
-  onClickMe() {
-    // clicked = 1;
-    alert("clicked");
-    // this.location = London;
+    );
   }
 
 }

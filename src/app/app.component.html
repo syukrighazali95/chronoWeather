@@ -1,3 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-light bg-dark">
+  <a class="navbar-brand text-warning" href="/home">ChronoWeather</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "></span>
+  </button>
 
+  <div class="topnav-right collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-warning" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-warning" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-warning" href="/settings">Settings</a>
+      </li>
+    </ul>
 
-<app-home></app-home>
+  </div>
+</nav>
+<!-- <app-home></app-home> -->
+<!-- This is for routing and navigation -->
+<router-outlet></router-outlet>

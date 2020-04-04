@@ -1,44 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-light bg-dark">
-  <a class="navbar-brand text-warning" href="index.html">ChronoWeather</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon "></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-warning" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-warning" href="#">About</a>
-      </li>
-      <li class="nav-item dropdown">
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <div class="form-group">
-        <input ngModel name="location" #firstname="ngModel" (change)="log(location)" class="form-control mr-sm-2" type="search" placeholder="Search Location" aria-label="Search" >
-        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-      </div>
-    </form>
-  </div>
-</nav>
-
 <div id="location" class="jumbotron">
   <p class="text-light">Weather Today</p>
-  <h1 class="text-warning">{{ location }}</h1>
-  <p class="text-light">last updated at {{ time }}</p>
+  <h1 class="text-warning">{{ location.state }}</h1>
+  <p class="text-light">last updated at {{ weather.current.last_updated }}</p>
   <div class="icon">
-    <img src="{{ icon }}" alt=""><p class="text-warning">{{ weather }}</p><br>
+    <img src="{{ weather.current.condition.icon }}" alt="weather"><p class="text-warning">{{ weather.current.condition.text }}</p><br>
   </div>
 </div>
 
 <div id="list">
   <ul class="list-group list-group-flush">
-  <li class="list-group-item text-warning bg-dark">Temperature: {{ temperature }} &#8451;</li>
-  <li class="list-group-item text-warning bg-dark">Feels like: {{ feels }} &#8451;</li>
-  <li class="list-group-item text-warning bg-dark">Relative Humidity: {{ humidity }} g/cm3</li>
-  <li class="list-group-item text-warning bg-dark">Wind: {{ wind }} km/h</li>
-
+  <li class="list-group-item text-warning bg-dark">Temperature: {{ weather.current.temp_c }} &#8451;</li>
+  <li class="list-group-item text-warning bg-dark">Feels like: {{ weather.current.feelslike_c }} &#8451;</li>
+  <li class="list-group-item text-warning bg-dark">Relative Humidity: {{ weather.current.humidity }} g/cm3</li>
+  <li class="list-group-item text-warning bg-dark">Wind: {{ weather.current.wind_kph }} km/h</li>
 </ul>
 </div>
 <!-- <div class="list-group">
@@ -52,3 +26,4 @@
 <p>Feels like: {{ feels }} &#8451;</p>
 <p>Relative Humidity: {{ humidity }} g/cm3</p>
 <p>Wind: {{ wind }} km/h</p> -->
+<!-- <p>home works</p> -->
