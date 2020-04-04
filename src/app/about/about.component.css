@@ -1,17 +1,18 @@
 h1{
   color: orange;
-  text-align: center;
-  margin-top: 70px;
 }
-.container{
-  padding-top: 170px;
-  padding-bottom: 320px;
-  background-image: url("../../assets/map.jpg");
-  background-size: cover;
-	background-repeat: no-repeat;
-  background-color: black;
+
+#map{
+  text-align: center;
+  color: white;
 }
 
 .jumbotron{
-  background: none;
+  background-image: url("../../assets/map2.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+  background-color: black;
+  height: 480px;
+  margin: 20px;
+  padding-top: 380px;
 }
